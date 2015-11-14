@@ -1,4 +1,4 @@
-DROP DATABASE ivent;
+DROP DATABASE IF EXISTS ivent;
 CREATE DATABASE ivent;
 
 USE ivent;

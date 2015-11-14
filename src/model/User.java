@@ -1,11 +1,11 @@
 package model;
 
 public class User {
-	long id;
+	private long id;
 	
-	long fbId;
+	private long fbId;
 	
-	String name;
+	private String name;
 
 	public User() {
 		

@@ -3,17 +3,17 @@ package model;
 import java.sql.Date;
 
 public class Event {
-	long id;
+	private long id;
 	
-	String name;
+	private String name;
 	
-	Date eventTime;
+	private Date eventTime;
 	
-	String location;
+	private String location;
 	
-	String description;
+	private String description;
 	
-	String imageLink;
+	private String imageLink;
 	
 	public Event() {
 		

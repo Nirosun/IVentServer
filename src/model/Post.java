@@ -3,15 +3,15 @@ package model;
 import java.sql.Timestamp;
 
 public class Post {
-	long id;
+	private long id;
 	
-	long userId;
+	private long userId;
 	
-	long eventId;
+	private long eventId;
 	
-	String postText;
+	private String postText;
 	
-	Timestamp ts;
+	private Timestamp ts;
 	
 	public Post() {
 		

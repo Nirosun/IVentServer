@@ -1,11 +1,11 @@
 package model;
 
 public class Category {
-	long id;
+	private long id;
 	
-	long userId;
+	private long userId;
 	
-	String name;
+	private String name;
 	
 	public Category() {
 		

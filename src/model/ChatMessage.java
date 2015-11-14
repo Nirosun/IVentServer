@@ -3,15 +3,15 @@ package model;
 import java.sql.Timestamp;
 
 public class ChatMessage {
-	long id;
+	private long id;
 	
-	long userId;
+	private long userId;
 	
-	long eventId;
+	private long eventId;
 	
-	String chatText;
+	private String chatText;
 	
-	Timestamp ts;
+	private Timestamp ts;
 	
 	public ChatMessage() {
 		
