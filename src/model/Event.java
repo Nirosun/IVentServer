@@ -7,7 +7,7 @@ public class Event {
 	
 	private String name;
 	
-	private Date eventTime;
+	private String eventTime;
 	
 	private String location;
 	
@@ -19,7 +19,7 @@ public class Event {
 		
 	}
 
-	public Event(long id, String name, Date eventTime, String location,
+	public Event(long id, String name, String eventTime, String location,
 			String description, String imageLink) {
 		super();
 		this.id = id;
@@ -46,11 +46,11 @@ public class Event {
 		this.name = name;
 	}
 
-	public Date getEventTime() {
+	public String getEventTime() {
 		return eventTime;
 	}
 
-	public void setEventTime(Date eventTime) {
+	public void setEventTime(String eventTime) {
 		this.eventTime = eventTime;
 	}
 

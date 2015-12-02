@@ -2,20 +2,21 @@ package model;
 
 public class User {
 	private long id;
-	
-	private long fbId;
-	
+		
 	private String name;
+	
+	private String password;
 
 	public User() {
 		
 	}
 
-	public User(long id, long fbId, String name) {
-		super();
-		this.id = id;
-		this.fbId = fbId;
-		this.name = name;
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public long getId() {
@@ -24,14 +25,6 @@ public class User {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public long getFbId() {
-		return fbId;
-	}
-
-	public void setFbId(long fbId) {
-		this.fbId = fbId;
 	}
 
 	public String getName() {
