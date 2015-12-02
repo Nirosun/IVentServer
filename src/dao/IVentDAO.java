@@ -1,9 +1,13 @@
 package dao;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -31,7 +35,8 @@ public class IVentDAO {
 	private static final String PASSWORD = "1234";
 
 	// text file containing all SQL queries
-	private static final String SQL_FILE_NAME = "sql.properties";
+	// FIXME: hardcoded
+	private static final String SQL_FILE_NAME = "/Users/niro/Documents/apache-tomcat-8.0.27/wtpwebapps/IVentServer/sql.properties";
 
 	private static final String CREATE_TABLES_FILE_NAME = "create_tables.sql";
 	
@@ -82,8 +87,9 @@ public class IVentDAO {
 	private String loadSQL(String key) {
 		Properties p = new Properties();
 
-		try {
-			FileInputStream in = new FileInputStream(SQL_FILE_NAME);
+		try {						
+			FileInputStream in = new FileInputStream(SQL_FILE_NAME);			
+						
 			p.load(in);
 						
 			in.close();
