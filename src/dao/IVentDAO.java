@@ -32,11 +32,11 @@ public class IVentDAO {
 	private static final String USER_NAME = "root";
 
 	// only for testing (should reset for different machines)
-	private static final String PASSWORD = "1234";
+	private static final String PASSWORD = "";
 
 	// text file containing all SQL queries
 	// FIXME: hardcoded
-	private static final String SQL_FILE_NAME = "/Users/niro/Documents/apache-tomcat-8.0.27/wtpwebapps/IVentServer/sql.properties";
+	private static final String SQL_FILE_NAME = "/Users/shuo/18641/project/IVentServer/WebContent/sql.properties";
 
 	private static final String CREATE_TABLES_FILE_NAME = "create_tables.sql";
 	
@@ -112,6 +112,7 @@ public class IVentDAO {
 			Class.forName(DRIVER_NAME);
 			conn = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
 		} catch (SQLException | ClassNotFoundException e) {
+			System.out.println("error get connection. ");
 			e.printStackTrace();
 		}
 
@@ -138,13 +139,12 @@ public class IVentDAO {
 		
 		try {
 			String sql = loadSQL(CREATE_USER);
-			
+						
 			Connection conn = getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
-
+			
 			statement.setString(1, name);
 			statement.setString(2, password);
-
 			rowCount = statement.executeUpdate();
 			
 			closeResources(null, statement, conn);
