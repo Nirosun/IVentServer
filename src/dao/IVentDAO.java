@@ -134,7 +134,7 @@ public class IVentDAO {
 	
 	/* User operations */
 	
-	public int createUser(String name, String password) {
+	public synchronized int createUser(String name, String password) {
 		int rowCount = 0;
 		
 		try {
@@ -185,7 +185,7 @@ public class IVentDAO {
 	
 	/* Category operations */
 	
-	public int createCategory(long userId, String name) {
+	public synchronized int createCategory(long userId, String name) {
 		int rowCount = 0;
 
 		try {
@@ -289,13 +289,13 @@ public class IVentDAO {
 		return categories;
 	}
 	
-	public void deleteCategory(long id) {
+	public synchronized void deleteCategory(long id) {
 		// TODO: to be completed
 	}
 	
 	/* Event operations */
 	
-	public int createEvent(String name, String eventTime, 
+	public synchronized int createEvent(String name, String eventTime, 
 			String location, String description, String imageLink) {
 		int rowCount = 0;
 		
@@ -320,7 +320,7 @@ public class IVentDAO {
 		return rowCount;
 	}
 	
-	public int addCategoryEventBinding(long eventId, long categoryId) {
+	public synchronized int addCategoryEventBinding(long eventId, long categoryId) {
 		int rowCount = 0;
 		
 		try {
@@ -402,13 +402,13 @@ public class IVentDAO {
 		return events;
 	}
 	
-	public void deleteEvent(long id) {
+	public synchronized void deleteEvent(long id) {
 		// TODO: to be completed
 	}
 	
 	/* Post operations */
 	
-	public int createPost(long userId, long eventId, String postText, String ts) {
+	public synchronized int createPost(long userId, long eventId, String postText, String ts) {
 		int rowCount = 0;
 		
 		try {
@@ -460,7 +460,6 @@ public class IVentDAO {
 	}
 	
 	public List<Post> getPostsByEventId(long eventId) {
-		// TODO: to be completed
 		List<Post> posts = new ArrayList<>();
 		
 		try {
@@ -491,13 +490,13 @@ public class IVentDAO {
 		return posts;
 	}
 	
-	public void deletePost(long id) {
+	public synchronized void deletePost(long id) {
 		// TODO: to be completed
 	}
 	
 	/* Chat operations */
 	
-	public int createChatMessage(long userId, long eventId, String chatText, String ts) {
+	public synchronized int createChatMessage(long userId, long eventId, String chatText, String ts) {
 		// TODO: to be completed
 		return 0;
 	}
